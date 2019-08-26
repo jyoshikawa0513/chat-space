@@ -1,6 +1,10 @@
-@mixin hen($color: white) {
-  color: $color;
-}
+  * {
+    box-sizing: border-box;
+  }
+  
+  *::-webkit-scrollbar {
+    display: none;
+  }
 
 .flash-box{
   @include hen();
@@ -92,7 +96,13 @@
         }
           &.main-header__left-box__member-list__member{
           }
-      
+
+        .main-header a {
+          color: #38aef0;
+            &:visited,:hover,:active{
+            color: #38aef0;	
+            }
+        }
       .main-header__edit-btn{
         height: 40px;
         line-height: 40px;
@@ -102,6 +112,7 @@
         position: absolute;
         right: 40px;
         }
+
     .messages{
           height: calc(100vh - 190px);
           padding: 46px 40px;
@@ -124,6 +135,7 @@
             font-size: 12px;
             margin-left: 10px;
           }
+
     .form{
       height: 90px;
       padding: 20px 40px;

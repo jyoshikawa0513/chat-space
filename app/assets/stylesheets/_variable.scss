@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  *::-webkit-scrollbar {
-    display: none;
-  }
+@mixin hen($color: white) {
+    color: $color;
+}
