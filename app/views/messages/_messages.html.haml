@@ -1,10 +1,11 @@
 .message
-	.message__upper-info
-		%p.message__upper-info__talker ユーザ名A
-		%p.message__upper-info__date 2019/8/17(sat) 11:57:21
-	%p.message__text いいね！ 
-%div.message
-	%div.message__upper-info
-		%p.message__upper-info__talker ユーザ名B
-		%p.message__upper-info__date 2019/8/17(sat) 11:58:21
-	%p.message__text 頑張ろう！ 
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .lower-message
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
