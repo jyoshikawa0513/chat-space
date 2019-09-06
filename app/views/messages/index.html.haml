@@ -1,19 +1,9 @@
 %body
-  .flash-box
-    .notice グループを作成しました
-
   .wrapper
-    .chat-side
-      .side-header
-        = render "side-header"
-      .groups
-        = render "groups" 
-
+    = render "shared/side_bar"
     .chat-main
       = render "chat-main"
-
       .messages
-        =render "messages"
-      
+        = render @messages
       .form
-        =render "form"
+        = render "form"
