@@ -4,11 +4,8 @@
       = @group.name 
     %ul.main-header__left-box__member-list
       Member : 
-      -# %li.main-header__left-box__member-list__member ユーザ名１
       -@group.users.each do |user|
         %li.member
           = user.name
-  -# %a( href='http://google.co.jp')
-  -# 	.main-header__edit-btn Edit
   = link_to edit_group_path(@group) do
     .main-header__edit-btn Edit
