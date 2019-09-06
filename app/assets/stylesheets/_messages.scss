@@ -18,6 +18,7 @@
   }
 
 .wrapper{
+  @include flexbox;
 }
   .chat-side{
     width: 300px;
