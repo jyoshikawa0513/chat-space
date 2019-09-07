@@ -1,29 +1,29 @@
 $(function() {
   function buildHTML(message){
-		var image = message.image ? `<img class="message-text__image" src=${message.image}>` : "";
+    var image = message.image ? `<img class="message-text__image" src=${message.image}>` : "";
 
 		var html = `<div class="message">
-									<div class="message__upper-info">
-										<div class="message__upper-info__talker">
-											${ message.name }
-										</div>
-										<div class="message__upper-info__date">
-											${ message.created_at }
-										</div>
-									</div>
-									<div class="lower-message">
-										<p class="lower-message__content">
-											${ message.content }
-										</p>
-										${ image }
-									</div>
-								</div>`
-		return html;
-	}
+                  <div class="message__upper-info">
+                    <div class="message__upper-info__talker">
+                      ${ message.name }
+                    </div>
+                    <div class="message__upper-info__date">
+                      ${ message.created_at }
+                    </div>
+                  </div>
+                  <div class="lower-message">
+                    <p class="lower-message__content">
+                      ${ message.content }
+                    </p>
+                    ${ image }
+                  </div>
+                </div>`
+    return html;
+  }
 
-	function scroll(){
-		$('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-	}
+  function scroll(){
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+  }
 
   $('#new_message').on('submit', function(e) {
 		e.preventDefault();
