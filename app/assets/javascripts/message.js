@@ -1,5 +1,7 @@
 $(function() {
   function buildHTML(message){
+		var image = message.image ? `<img class="message-text__image" src=${message.image}>` : "";
+
 		var html = `<div class="message">
 									<div class="message__upper-info">
 										<div class="message__upper-info__talker">
@@ -20,7 +22,7 @@ $(function() {
 	}
 
 	function scroll(){
-		$('.chat-main').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+		$('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
 	}
 
   $('#new_message').on('submit', function(e) {
@@ -39,12 +41,17 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.messages').append(html);
-      $(',submit-btn.val').val('');
+			// $('#input').val('');
+			$("#new_message")[0].reset();
+			scroll();
 		})
 		
     .fail(function() {
-      // alert('error');
-		});
+      alert('メッセージを入力してください');
+		})
 	
+		.always(function(){
+			$('.submit-btn').prop("disabled", false);
+		})
   });
 });
