@@ -38,8 +38,8 @@ $(function() {
       contentType: false
     })
 
-    .done(function(data) {
-      var html = buildHTML(data);
+    .done(function(message) {
+      var html = buildHTML(message);
       $('.messages').append(html);
       $("#new_message")[0].reset();
       scroll();
