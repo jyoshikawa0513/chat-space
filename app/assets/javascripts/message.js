@@ -72,7 +72,6 @@ $(function() {
         insertHTML = buildHTML(messages);         
         $('.messages').append(insertHTML)
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-        // ScrollToNewMessage();
         });
       })
 
